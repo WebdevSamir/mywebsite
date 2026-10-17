@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samir Aryan – Web Developer, Teacher & CTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf8f7;--surface:#fff;--text:#1d2433;--muted:#5d667a;--accent:#e0566b;--accent2:#1f4e79;--soft:#fbe4e6;--border:#ece4e4;--shadow:0 8px 30px rgba(31,78,121,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141d;--surface:#171e2b;--text:#e9edf5;--muted:#9aa5bb;--accent:#ff7f92;--accent2:#7db4ee;--soft:#2a1f2b;--border:#273044;--shadow:0 8px 30px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f141d;--surface:#171e2b;--text:#e9edf5;--muted:#9aa5bb;--accent:#ff7f92;--accent2:#7db4ee;--soft:#2a1f2b;--border:#273044;--shadow:0 8px 30px rgba(0,0,0,.35);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:Poppins,Inter,system-ui,sans-serif;line-height:1.2;margin:0}
+a{color:var(--accent2);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:Poppins,sans-serif;font-weight:700;color:var(--text)}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:18px;overflow-x:auto;font-size:.92rem;font-weight:500}
+nav a{color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--accent)}
+#theme{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:999px;width:36px;height:36px;cursor:pointer;flex:none}
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.4fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:var(--soft);color:var(--accent);font-weight:600;font-size:.82rem;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:540px;margin:18px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:12px;font-weight:600;border:1px solid var(--accent);display:inline-block}
+.btn.p{background:var(--accent);color:#fff}
+.btn.s{color:var(--accent)}
+.card-hero{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:28px;box-shadow:var(--shadow);text-align:center}
+.avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font:700 2.4rem Poppins,sans-serif;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.stats b{display:block;font:700 1.4rem Poppins,sans-serif;color:var(--accent2)}
+.stats span{font-size:.75rem;color:var(--muted)}
+section{padding:56px 0}
+.sec-h{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.sec-h h2{font-size:1.7rem}
+.sec-h::after{content:"";flex:1;height:2px;background:var(--border)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.timeline{position:relative;padding-left:26px;border-left:2px solid var(--border);display:grid;gap:22px}
+.item{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow)}
+.item::before{content:"";position:absolute;left:-35px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.item .when{font-size:.8rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+.item h3{font-size:1.1rem;margin:4px 0}
+.item .org{color:var(--accent2);font-weight:600;font-size:.93rem}
+.item p{margin:10px 0 0;color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--surface);border:1px solid var(--border);padding:8px 16px;border-radius:999px;font-size:.9rem;font-weight:500}
+.chip.alt{background:var(--soft);border-color:transparent;color:var(--accent)}
+.sub{font-size:.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:26px 0 12px}
+.edu{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.edu .yr{font-weight:700;color:var(--accent)}
+.contact{text-align:center}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 26px}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}.logo{display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#top">Samir<span>.</span>Aryan</a>
+<nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+<button id="theme" aria-label="Toggle theme">◐</button>
+</div></header>
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="tag">Web Developer · Educator · CTO</span>
+<h1>Hi, I’m <em>Samir Aryan</em>.<br>I build and teach technology.</h1>
+<p>B.Sc. CSIT graduate with hands-on experience in web design, WordPress development, graphic design, video editing and IT management, currently teaching Computer Science and leading technology at Saral Shikshya Academy.</p>
+<div class="btns"><a class="btn p" href="#contact">Get in touch</a><a class="btn s" href="#experience">View experience</a></div>
+</div>
+<div class="card-hero">
+<div class="avatar">SA</div>
+<h3>Samir Aryan</h3>
+<div style="color:var(--muted);font-size:.9rem">Kathmandu, Nepal</div>
+<div class="stats"><div><b>4+</b><span>Years in web dev</span></div><div><b>4</b><span>Roles held</span></div><div><b>CTO</b><span>Saral Shikshya</span></div></div>
+</div>
+</div></div>
+<section id="about"><div class="wrap">
+<div class="sec-h"><h2>About me</h2></div>
+<div class="grid">
+<div class="card"><h3>Developer</h3><p>HTML, CSS, PHP, Python and WordPress, from theme customization and plugin development to full site optimization.</p></div>
+<div class="card"><h3>Creative</h3><p>Graphic design and video editing alongside web design, so projects look as good as they work.</p></div>
+<div class="card"><h3>Teacher & leader</h3><p>Teaching Computer Science while managing IT operations, website development and technology strategy.</p></div>
+</div>
+<p style="color:var(--muted);margin-top:24px">I’m a confident, self-driven and adaptive learner who wants to keep improving, adopt emerging technologies and help organizations grow through innovation, teamwork and continuous learning. Outside of work, I play guitar and record music.</p>
+</div></section>
+<section id="experience"><div class="wrap">
+<div class="sec-h"><h2>Experience</h2></div>
+<div class="timeline">
+<div class="item"><div class="when">June 2024 – Present</div><h3>Teacher & Chief Technology Officer</h3><div class="org">Saral Shikshya Academy Pvt. Ltd · Bagbazar, Kathmandu</div><p>Teach Computer Science, manage IT operations and website development, and implement technology-driven solutions that improve academic and administrative efficiency.</p></div>
+<div class="item"><div class="when">July 2023 – July 2024</div><h3>Web Developer</h3><div class="org">Atlas Infotech Pvt. Ltd.</div><p>Delivered quality web work with a strong work ethic and dedication.</p></div>
+<div class="item"><div class="when">April 2023 – Sept 2023</div><h3>Web Development Intern</h3><div class="org">Numa Digital Farm · Biratnagar</div><p>Contributed to real projects and learned from industry professionals, building skills in HTML, CSS, JavaScript and WordPress.</p></div>
+<div class="item"><div class="when">June 2022 – June 2023 · Remote</div><h3>Web Developer</h3><div class="org">CODE-IT</div><p>WordPress development including theme customization, plugin development and website optimization, delivering solutions that met and exceeded client requirements.</p></div>
+</div>
+</div></section>
+<section id="skills"><div class="wrap">
+<div class="sec-h"><h2>Skills</h2></div>
+<div class="sub" style="margin-top:0">Technical</div>
+<div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Machine Learning</span><span class="chip">WordPress</span><span class="chip">Website Design</span><span class="chip">Graphic Design</span><span class="chip">Video Editing</span><span class="chip">AI Tools</span></div>
+<div class="sub">Interpersonal</div>
+<div class="chips"><span class="chip alt">Work Ethic</span><span class="chip alt">Adaptability</span><span class="chip alt">Flexibility</span><span class="chip alt">Teamwork</span><span class="chip alt">Communication</span><span class="chip alt">Problem-solving</span><span class="chip alt">Technical Writing</span></div>
+<div class="sub">Languages</div>
+<div class="chips"><span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Maithili</span></div>
+</div></section>
+<section id="projects"><div class="wrap">
+<div class="sec-h"><h2>Projects</h2></div>
+<div class="grid">
+<div class="card"><div class="when" style="font-size:.8rem;font-weight:600;color:var(--accent)">7th semester · Team of 3</div><h3 style="margin-top:4px">Student Network System (Stenets)</h3><p>A platform that streamlines student communication and resource sharing, which I led as team lead.</p></div>
+<div class="card"><div class="when" style="font-size:.8rem;font-weight:600;color:var(--accent)">8th semester</div><h3 style="margin-top:4px">Hotel Management System</h3><p>A hotel website focused on efficient booking, customer management and user-friendly design.</p></div>
+</div>
+</div></section>
+<section id="education"><div class="wrap">
+<div class="sec-h"><h2>Education</h2></div>
+<div class="timeline">
+<div class="item edu"><div><h3>B.Sc. Computer Science & Information Technology</h3><div class="org">Mahendra Morang Adarsha Multiple Campus (Tribhuvan University)</div><p>Biratnagar, Nepal · 66.02%</p></div><div class="yr">2024</div></div>
+<div class="item edu"><div><h3>National Examinations Board (NEB)</h3><div class="org">Orchid Public Secondary School</div><p>Biratnagar, Nepal · CGPA 3.01</p></div><div class="yr">2018</div></div>
+<div class="item edu"><div><h3>School Leaving Certificate (SLC)</h3><div class="org">Bhanu Memorial English Boarding School</div><p>Biratnagar, Nepal · GPA 3.00</p></div><div class="yr">2015</div></div>
+</div>
+</div></section>
+<section id="contact"><div class="wrap contact">
+<div class="sec-h"><h2>Let’s connect</h2></div>
+<p>Interested in working together, or just want to say hello? Reach out through any of the channels below.</p>
+<div class="links">
+<a class="btn p" href="mailto:samiraryan2018@gmail.com">samiraryan2018@gmail.com</a>
+<a class="btn s" href="https://github.com/WebdevSamir" target="_blank" rel="noopener">GitHub</a>
+<a class="btn s" href="https://www.linkedin.com/in/samir-aryan-3970a31a5/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div></section>
+</main>
+<footer>© <span id="y">2026</span> Samir Aryan · Biratnagar & Kathmandu, Nepal</footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var b=document.getElementById('theme'),r=document.documentElement;
+b.addEventListener('click',function(){
+var dark=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+r.setAttribute('data-theme',dark?'light':'dark');
+});
+</script>
+</body>
+</html>
